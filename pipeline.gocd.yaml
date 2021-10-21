@@ -7,7 +7,7 @@ pipelines:
         git: https://github.com/brucorreiatw/gocd-test.git
         branch: master
     stages:
-      - Build_Demo_Project_Stage:
+      - Build:
           clean_workspace: true
           jobs:
             build_task:
@@ -16,4 +16,14 @@ pipelines:
                     run_if: passed
                     command: echo
                     arguments:
-                    - test
+                    - Build
+      - Deploy:
+          clean_workspace: true
+          jobs:
+            build_task:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo
+                    arguments:
+                    - Deploy
