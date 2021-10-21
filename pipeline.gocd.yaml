@@ -10,9 +10,6 @@ pipelines:
         git: https://github.com/brucorreiatw/gocd-test.git
         branch: master
     stages:
-      environment_variables:
-        PROJECT: "null"
-        RELEASE: "null"
       - Build:
           clean_workspace: true
           jobs:
@@ -32,7 +29,7 @@ pipelines:
                     run_if: passed
                     command: echo
                     arguments:
-                    - $RELEASE
+                      - $RELEASE
       - Deploy:
           clean_workspace: true
           jobs:
@@ -42,7 +39,7 @@ pipelines:
                     run_if: passed
                     command: echo
                     arguments:
-                    - $PROJECT $RELEASE
+                      - $PROJECT $RELEASE
       - Debug:
           clean_workspace: true
           jobs:
@@ -52,5 +49,4 @@ pipelines:
                     run_if: passed
                     command: echo
                     arguments:
-                    - $PROJECT $RELEASE
-
+                      - $PROJECT $RELEASE
