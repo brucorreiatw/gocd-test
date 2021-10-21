@@ -19,7 +19,7 @@ pipelines:
                     run_if: passed
                     command: echo
                     arguments:
-                    - Build
+                    - Build ${PROJECT} ${RELEASE}
       - Test:
           clean_workspace: true
           jobs:
@@ -29,7 +29,7 @@ pipelines:
                     run_if: passed
                     command: echo
                     arguments:
-                    - Test
+                    - Test ${PROJECT} ${RELEASE}
       - Deploy:
           clean_workspace: true
           jobs:
@@ -39,4 +39,4 @@ pipelines:
                     run_if: passed
                     command: echo
                     arguments:
-                    - Deploy
+                    - Deploy ${PROJECT} ${RELEASE}
