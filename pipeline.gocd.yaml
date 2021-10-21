@@ -2,8 +2,8 @@ format_version: 2
 pipelines:
   pipeline_code_demo:
     environment_variables:
-      PROJECT: null
-      RELEASE: null
+      PROJECT: "null"
+      RELEASE: "null"
     group: defaultGroup
     materials:
       backend:
