@@ -20,34 +20,4 @@ pipelines:
                     command: sh
                     arguments:
                     - -c
-                    - echo ${PROJECT}
-      - Test:
-          clean_workspace: true
-          jobs:
-            build_task:
-              tasks:
-                - exec:
-                    run_if: passed
-                    command: echo
-                    arguments:
-                      - $RELEASE
-      - Deploy:
-          clean_workspace: true
-          jobs:
-            build_task:
-              tasks:
-                - exec:
-                    run_if: passed
-                    command: echo
-                    arguments:
-                      - $PROJECT $RELEASE
-      - Debug:
-          clean_workspace: true
-          jobs:
-            build_task:
-              tasks:
-                - exec:
-                    run_if: passed
-                    command: echo
-                    arguments:
-                      - $PROJECT $RELEASE
+                    - echo ${PROJECT} ${RELEASE}
