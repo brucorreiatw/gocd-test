@@ -1,15 +1,15 @@
 format_version: 2
 pipelines:
   pipeline_code_demo:
-    environment_variables:
-      PROJECT: "0"
-      RELEASE: "0"
     group: defaultGroup
     materials:
       backend:
         git: https://github.com/brucorreiatw/gocd-test.git
         branch: master
     stages:
+      environment_variables:
+        PROJECT: "0"
+        RELEASE: "0"
       - Build:
           clean_workspace: true
           jobs:
