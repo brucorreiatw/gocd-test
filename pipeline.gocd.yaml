@@ -17,6 +17,16 @@ pipelines:
                     command: echo
                     arguments:
                     - Build
+      - Test:
+          clean_workspace: true
+          jobs:
+            build_task:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: echo
+                    arguments:
+                    - Test
       - Deploy:
           clean_workspace: true
           jobs:
