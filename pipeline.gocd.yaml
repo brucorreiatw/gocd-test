@@ -17,9 +17,10 @@ pipelines:
               tasks:
                 - exec:
                     run_if: passed
-                    command: /bin/sh 
+                    command: sh
                     arguments:
-                    - -c echo ${PROJECT}
+                    - -c
+                    - echo ${PROJECT}
       - Test:
           clean_workspace: true
           jobs:
