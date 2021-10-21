@@ -1,6 +1,9 @@
 format_version: 2
 pipelines:
   pipeline_code_demo:
+    environment_variables:
+      PROJECT: "null"
+      RELEASE: "null"
     group: defaultGroup
     materials:
       backend:
@@ -8,8 +11,8 @@ pipelines:
         branch: master
     stages:
       environment_variables:
-        PROJECT: "0"
-        RELEASE: "0"
+        PROJECT: "null"
+        RELEASE: "null"
       - Build:
           clean_workspace: true
           jobs:
@@ -19,7 +22,7 @@ pipelines:
                     run_if: passed
                     command: echo
                     arguments:
-                    - #{PROJECT}
+                    - $PROJECT
       - Test:
           clean_workspace: true
           jobs:
@@ -29,7 +32,7 @@ pipelines:
                     run_if: passed
                     command: echo
                     arguments:
-                    - #{RELEASE}
+                    - $RELEASE
       - Deploy:
           clean_workspace: true
           jobs:
@@ -39,4 +42,4 @@ pipelines:
                     run_if: passed
                     command: echo
                     arguments:
-                    - #{PROJECT} #{RELEASE}
+                    - $PROJECT $RELEASE
