@@ -4,6 +4,7 @@ pipelines:
     environment_variables:
       PROJECT: "null"
       RELEASE: "null"
+      ENV: "null"
     group: defaultGroup
     materials:
       backend:
