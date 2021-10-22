@@ -2,7 +2,6 @@ format_version: 2
 pipelines:
   pipeline_code_demo:
     environment_variables:
-      PROJECT: "null"
       RELEASE: "null"
       ENV: "null"
     group: defaultGroup
@@ -10,9 +9,11 @@ pipelines:
       backend:
         git: https://github.com/brucorreiatw/gocd-test.git
         branch: master
+        destination: project
       tools:
         git: https://github.com/brucorreiatw/gocd-tools.git
         branch: master
+        destination: scripts
     stages:
       - Build:
           clean_workspace: true
@@ -20,8 +21,9 @@ pipelines:
             build_task:
               tasks:
                 - exec:
-                    run_if: passed
-                    command: sh
+                    command: python3
                     arguments:
-                    - -c
-                    - echo ${PROJECT} ${RELEASE} ${ENV}
+                      - scripts/release.py
+                      - project/example.yaml
+                      - ${RELEASE} 
+                      - ${ENV}
