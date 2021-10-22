@@ -27,3 +27,12 @@ pipelines:
                       - project/example.yaml
                       - ${RELEASE} 
                       - ${ENV}
+      - Debug:
+          clean_workspace: true
+          jobs:
+            build_task:
+              tasks:
+                - exec:
+                    command: cat
+                    arguments:
+                      - project/example.yaml
