@@ -23,7 +23,7 @@ pipelines:
                 - exec:
                     command: python3
                     arguments:
-                      - scripts/release.py
+                      - scripts/releases.py
                       - project/example.yaml
                       - ${RELEASE} 
                       - ${ENV}
