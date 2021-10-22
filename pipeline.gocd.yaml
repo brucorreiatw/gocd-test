@@ -24,11 +24,6 @@ pipelines:
                     source: project
               tasks:
                 - exec:
-                    command: sh 
-                    arguments:
-                      - -c
-                      - echo ${RELEASE} ${ENV}
-                - exec:
                     command: sh
                     arguments:
                       - -c 
