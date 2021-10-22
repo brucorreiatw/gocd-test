@@ -7,11 +7,11 @@ pipelines:
     group: defaultGroup
     materials:
       backend:
-        git: https://github.com/brucorreiatw/gocd-test.git
+        git: git@github.com:brucorreiatw/gocd-test.git
         branch: master
         destination: project
       tools:
-        git: https://github.com/brucorreiatw/gocd-tools.git
+        git: git@github.com:brucorreiatw/gocd-tools.git
         branch: master
         destination: scripts
     stages:
