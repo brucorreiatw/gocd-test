@@ -24,10 +24,11 @@ pipelines:
                     source: project
               tasks:
                 - exec:
-                    command: echo
+                    command: sh 
                     arguments:
-                      - "${RELEASE}"
-                      - "${ENV}"
+                      - -c
+                      - ${RELEASE}
+                      - ${ENV}
                 - exec:
                     command: python3
                     arguments:
