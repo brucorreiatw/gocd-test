@@ -46,7 +46,7 @@ pipelines:
                     command: sh
                     arguments: 
                       - -c
-                      - git --git-dir=project/.git --work-tree=project commit -m ${RELEASE} ${ENV}
+                      - git --git-dir=project/.git --work-tree=project commit -m '${RELEASE} ${ENV}'
                 - exec:
                     command: sh
                     arguments: 
