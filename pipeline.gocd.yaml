@@ -47,3 +47,13 @@ pipelines:
                     arguments: 
                       - -c
                       - git --git-dir=project/.git --work-tree=project push
+      - rollouted:
+          approval: manual
+          jobs:
+            rollouted:
+              tasks:
+                - exec:
+                    command: sh
+                    arguments:
+                      - -c 
+                      - echo rollouted
