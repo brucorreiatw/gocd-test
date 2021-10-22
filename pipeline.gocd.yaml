@@ -28,8 +28,8 @@ pipelines:
                     arguments:
                       - scripts/release.py
                       - project/example.yaml
-                      - \${RELEASE} 
-                      - \${ENV}
+                      - $RELEASE 
+                      - $ENV
                 - exec:
                     command: cat
                     arguments:
