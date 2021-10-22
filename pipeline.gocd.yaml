@@ -15,15 +15,20 @@ pipelines:
         branch: master
         destination: scripts
     stages:
-      - Build:
+      - build:
           clean_workspace: true
           jobs:
             build_task:
+              resources:
+                - build
+              artifacts:
+                - build:
+                    source: output/project
               tasks:
                 - exec:
                     command: python3
                     arguments:
-                      - scripts/releases.py
+                      - scripts/release.py
                       - project/example.yaml
                       - ${RELEASE} 
                       - ${ENV}
@@ -32,6 +37,10 @@ pipelines:
           jobs:
             build_task:
               tasks:
+                - fetch:
+                    stage: build
+                    job: build_task
+                    source: project
                 - exec:
                     command: cat
                     arguments:
