@@ -30,15 +30,6 @@ pipelines:
                       - project/example.yaml
                       - ${RELEASE} 
                       - ${ENV}
-      - Debug:
-          clean_workspace: true
-          jobs:
-            build_task:
-              tasks:
-                - fetch:
-                    stage: build
-                    job: build_task
-                    source: project
                 - exec:
                     command: cat
                     arguments:
