@@ -26,8 +26,8 @@ pipelines:
                 - exec:
                     command: echo
                     arguments:
-                      - $RELEASE 
-                      - $ENV
+                      - "${RELEASE}"
+                      - "${ENV}"
                 - exec:
                     command: python3
                     arguments:
