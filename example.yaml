@@ -3,10 +3,10 @@ spec:
     app:
       name: example-app
     configmap:
-      data: 'ENV: dev'
+      data: 'ENV: prod'
     image:
       repository: nexus.com.br
-      tag: 1.0.6
+      tag: 1.0.1
     resources:
       limits:
         cpu: 512m
