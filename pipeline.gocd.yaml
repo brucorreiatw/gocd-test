@@ -10,6 +10,9 @@ pipelines:
       backend:
         git: https://github.com/brucorreiatw/gocd-test.git
         branch: master
+      tools:
+        git: https://github.com/brucorreiatw/gocd-tools.git
+        branch: master
     stages:
       - Build:
           clean_workspace: true
