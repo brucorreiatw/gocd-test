@@ -23,7 +23,7 @@ pipelines:
                 - build:
                     source: project
               tasks:
-                  - exec:
+                - exec:
                     command: echo
                     arguments:
                       - $RELEASE 
