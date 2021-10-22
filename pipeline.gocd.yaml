@@ -31,7 +31,8 @@ pipelines:
                 - exec:
                     command: sh
                     arguments:
-                      - -c python3 scripts/release.py project/example.yaml ${RELEASE} ${ENV}
+                      - -c 
+                      - python3 scripts/release.py project/example.yaml ${RELEASE} ${ENV}
                 - exec:
                     command: cat
                     arguments:
