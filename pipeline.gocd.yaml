@@ -19,9 +19,6 @@ pipelines:
           clean_workspace: true
           jobs:
             build_task:
-              artifacts:
-                - build:
-                    source: output/project
               tasks:
                 - exec:
                     command: python3
